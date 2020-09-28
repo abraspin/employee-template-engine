@@ -54,6 +54,72 @@ createNewManager();
 
 ///////////////////////Enter the rest of the team///////////////////////
 
+// function createEmployee() {
+//   inquirer.prompt([
+//     {
+//       type: "input",
+//       name: "managerName",
+//       message: "Please enter Manager name:",
+//       // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
+//     },
+//     {
+//       type: "input",
+//       name: "managerID",
+//       message: "Please enter Manager ID number:",
+//     },
+//     {
+//       type: "input",
+//       name: "managerEmail",
+//       message: "Please enter Manager e-mail address:",
+//     },
+//   ]);
+// }
+
+//FIXME: these variables were for a cockamamie idea for DRY
+function createEngineer(name, id, email) {
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "engineerName",
+        message: "Please enter Engineer name:",
+        // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
+      },
+      {
+        type: "input",
+        name: "engineerID",
+        message: "Please enter Engineer ID number:",
+      },
+      {
+        type: "input",
+        name: "engineerEmail",
+        message: "Please enter Engineer e-mail address:",
+      },
+      {
+        type: "input",
+        name: "engineerGitHub",
+        message: "Please enter Engineer GitHub username:",
+      },
+    ])
+    .then(function (data) {
+      const engineer = new Engineer(data.engineerName, data.engineerID, data.engineerEmail, data.engineerGitHub);
+      employees.push(engineer);
+      console.log(employees);
+    });
+}
+
+createEngineer();
+
+function createIntern() {
+  inquirer.prompt([
+    {
+      type: "input",
+      name: "managerOfficeNumber",
+      message: "Please enter Manager office number:",
+    },
+  ]);
+}
+
 // const questions = [
 //     {
 //       type: "input",
