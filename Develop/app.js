@@ -9,6 +9,7 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const { defaultMaxListeners } = require("stream");
 
 // array to hold employee objects
 const employees = [];
@@ -46,11 +47,11 @@ const createNewManager = () => {
     .then(function (data) {
       const manager = new Manager(data.managerName, data.managerID, data.managerEmail, data.managerOfficeNumber);
       employees.push(manager);
-      console.log(employees);
+      createRestOfTeam();
     });
 };
 
-// createNewManager();
+createNewManager();
 
 ///////////////////////Enter the rest of the team///////////////////////
 
@@ -74,6 +75,34 @@ const createNewManager = () => {
 //     },
 //   ]);
 // }
+
+function createRestOfTeam() {
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        name: "newMemberRole",
+        message: "Please choose another team member to add:",
+        // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
+        choices: ["Engineer", "Intern", "I'm done!"],
+      },
+    ])
+    .then((data) => {
+      switch (data.newMemberRole) {
+        case "Engineer":
+          createEngineer();
+          break;
+        case "Intern":
+          createIntern();
+          break;
+        //TODO: can i combine these? remove I'm done and treat any other input as default? I think so
+        case "I'm done!":
+          render(employees);
+        default:
+          console.log(render(employees));
+      }
+    });
+}
 
 //FIXME: these variables were for a cockamamie idea for DRY
 function createEngineer(name, id, email) {
@@ -104,7 +133,7 @@ function createEngineer(name, id, email) {
     .then(function (data) {
       const engineer = new Engineer(data.engineerName, data.engineerID, data.engineerEmail, data.engineerGitHub);
       employees.push(engineer);
-      console.log(employees);
+      createRestOfTeam();
     });
 }
 
@@ -138,10 +167,10 @@ function createIntern() {
     .then(function (data) {
       const intern = new Intern(data.internName, data.internID, data.internEmail, data.internSchool);
       employees.push(intern);
-      console.log(employees);
+      createRestOfTeam();
     });
 }
-createIntern();
+// createIntern();
 
 // const questions = [
 //     {
