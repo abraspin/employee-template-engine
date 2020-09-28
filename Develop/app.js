@@ -96,10 +96,9 @@ function createRestOfTeam() {
           createIntern();
           break;
         //TODO: can i combine these? remove I'm done and treat any other input as default? I think so
-        case "I'm done!":
-          render(employees);
+        //TODO: add a final prompt for team name maybe
         default:
-          console.log(render(employees));
+          writeHTMLDoc(render(employees));
       }
     });
 }
@@ -170,7 +169,36 @@ function createIntern() {
       createRestOfTeam();
     });
 }
-// createIntern();
+
+function writeHTMLDoc(renderData, teamName) {
+  // what goes in the file:
+  // const filename = teamName;
+  const fileContent = renderData;
+
+  // write the HTML file!
+
+  // reference:
+  // const OUTPUT_DIR = path.resolve(__dirname, "output");
+  // const outputPath = path.join(OUTPUT_DIR, "team.html");
+
+  // check to see if anticipated output folder exists already
+  //TODO: is this right?
+  if (!fs.existsSync(OUTPUT_DIR)) {
+    console.log("I couldn't find the output directory so I tried to make one!");
+    fs.mkdir(OUTPUT_DIR, (err) => {
+      if (err) {
+        throw err;
+      }
+    });
+  }
+  //will overwrite existing file if it already exists in output path
+  fs.writeFile(outputPath, fileContent, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+    console.log("Your team template HTML page has been successfully generated!");
+  });
+}
 
 // const questions = [
 //     {
