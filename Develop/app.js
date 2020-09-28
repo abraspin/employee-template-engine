@@ -10,9 +10,73 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+// array to hold employee objects
+const employees = [];
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
+
+const createNewManager = () => {
+  //   const newManager =
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "managerName",
+        message: "Please enter Manager name:",
+        // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
+      },
+      {
+        type: "input",
+        name: "managerID",
+        message: "Please enter Manager ID number:",
+      },
+      {
+        type: "input",
+        name: "managerEmail",
+        message: "Please enter Manager e-mail address:",
+      },
+      {
+        type: "input",
+        name: "managerOfficeNumber",
+        message: "Please enter Manager office number:",
+      },
+      //TODO: how do you do this with bracket object destruct or something notation e.g. { variable, variable}
+    ])
+    .then(function (data) {
+      const manager = new Manager(data.managerName, data.managerID, data.managerEmail, data.managerOfficeNumber);
+      employees.push(manager);
+      console.log(employees);
+    });
+};
+
+createNewManager();
+
+///////////////////////Enter the rest of the team///////////////////////
+
+// const questions = [
+//     {
+//       type: "input",
+//       name: "managerName",
+//       message: "Please enter Manager name:",
+//       // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
+//     },
+//     {
+//       type: "input",
+//       name: "managerID",
+//       message: "Please enter Manager ID number:",
+//     },
+//     {
+//       type: "input",
+//       name: "managerEmail",
+//       message: "Please enter Manager e-mail address:",
+//     },
+//     {
+//       type: "input",
+//       name: "managerOfficeNumber",
+//       message: "Please enter Manager office number:",
+//     },
+//   ];
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
