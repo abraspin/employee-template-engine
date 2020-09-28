@@ -50,7 +50,7 @@ const createNewManager = () => {
     });
 };
 
-createNewManager();
+// createNewManager();
 
 ///////////////////////Enter the rest of the team///////////////////////
 
@@ -108,17 +108,40 @@ function createEngineer(name, id, email) {
     });
 }
 
-createEngineer();
+// createEngineer();
 
 function createIntern() {
-  inquirer.prompt([
-    {
-      type: "input",
-      name: "managerOfficeNumber",
-      message: "Please enter Manager office number:",
-    },
-  ]);
+  inquirer
+    .prompt([
+      {
+        type: "input",
+        name: "internName",
+        message: "Please enter Intern name:",
+        // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
+      },
+      {
+        type: "input",
+        name: "internID",
+        message: "Please enter Intern ID number:",
+      },
+      {
+        type: "input",
+        name: "internEmail",
+        message: "Please enter Intern e-mail address:",
+      },
+      {
+        type: "input",
+        name: "internSchool",
+        message: "Please enter Intern school:",
+      },
+    ])
+    .then(function (data) {
+      const intern = new Intern(data.internName, data.internID, data.internEmail, data.internSchool);
+      employees.push(intern);
+      console.log(employees);
+    });
 }
+createIntern();
 
 // const questions = [
 //     {
