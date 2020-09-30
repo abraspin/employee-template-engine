@@ -10,7 +10,6 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-// array to hold employee objects
 const employees = [];
 
 const createNewManager = () => {
@@ -162,7 +161,7 @@ function createIntern() {
           if (internName) {
             return true;
           }
-          return "You must enter an intern nameinternName!";
+          return "You must enter an intern name!";
         },
       },
       {
@@ -222,6 +221,6 @@ function writeHTMLDoc(renderData) {
     if (err) {
       return console.log(err);
     }
-    console.log("Your team template HTML page has been successfully generated!");
+    console.log(`\nYour team template HTML page has been successfully generated at: \n ${outputPath} \nHave a great day!`);
   });
 }
