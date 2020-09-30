@@ -2,3 +2,4 @@ node_modules/
 test1.html
 .vscode/
 test1
+package-lock.JSON
