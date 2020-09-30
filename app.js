@@ -16,26 +16,28 @@ const { defaultMaxListeners } = require("stream");
 const employees = [];
 
 /////////////////////////TODO: test array below
-const testEmployees = [
-  new Manager("Michael", "01", "michael@email.com", "2"),
-  new Engineer("Angela", "02", "angela@email.cat", "angelacat"),
-  new Intern("Ryan", "19", "ryan@email.temp", "UT-Austin"),
-  new Intern("Pam", "22", "pam@email.roy", "Art School"),
-  new Engineer("Oscar", "15", "oscar@email.wine", "C-Span"),
-  new Intern("Kevin", "45", "kevin@kevin.thezitz", "Sea World"),
-  new Engineer("Jim", "97", "jim@email.sports", "bigtuna"),
+// const testEmployees = [
+//   new Manager("Michael", "01", "michael@email.com", "2"),
+//   new Engineer("Angela", "02", "angela@email.cat", "angelacat"),
+//   new Intern("Ryan", "19", "ryan@email.temp", "UT-Austin"),
+//   new Intern("Pam", "22", "pam@email.roy", "Art School"),
+//   new Engineer("Oscar", "15", "oscar@email.wine", "C-Span"),
+//   new Intern("Kevin", "45", "kevin@kevin.thezitz", "Sea World"),
+//   new Engineer("Jim", "97", "jim@email.sports", "bigtuna"),
 ];
 /////////////////////////////////////
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-//Run program //TODO: revert test comment/code
-// createNewManager();
-writeHTMLDoc(render(testEmployees));
+//Run program 
+createNewManager();
+
+//TODO: revert test comment/code
+// writeHTMLDoc(render(testEmployees));
 
 const createNewManager = () => {]
-  //FIXME: should this be here?-->   const newManager =
+  //FIXME: should this be here?-->   return? const newManager =
   inquirer
     .prompt([
       {
