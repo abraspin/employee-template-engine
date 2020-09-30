@@ -9,16 +9,33 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+//FIXME: wth is this? 
 const { defaultMaxListeners } = require("stream");
 
 // array to hold employee objects
 const employees = [];
 
+/////////////////////////TODO: test array below
+const testEmployees = [
+  new Manager("Michael", "01", "michael@email.com", "2"),
+  new Engineer("Angela", "02", "angela@email.cat", "angelacat"),
+  new Intern("Ryan", "19", "ryan@email.temp", "UT-Austin"),
+  new Intern("Pam", "22", "pam@email.roy", "Art School"),
+  new Engineer("Oscar", "15", "oscar@email.wine", "C-Span"),
+  new Intern("Kevin", "45", "kevin@kevin.thezitz", "Sea World"),
+  new Engineer("Jim", "97", "jim@email.sports", "bigtuna"),
+];
+/////////////////////////////////////
+
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
 
-const createNewManager = () => {
-  //   const newManager =
+//Run program //TODO: revert test comment/code
+// createNewManager();
+writeHTMLDoc(render(testEmployees));
+
+const createNewManager = () => {]
+  //FIXME: should this be here?-->   const newManager =
   inquirer
     .prompt([
       {
@@ -51,31 +68,6 @@ const createNewManager = () => {
     });
 };
 
-createNewManager();
-
-///////////////////////Enter the rest of the team///////////////////////
-
-// function createEmployee() {
-//   inquirer.prompt([
-//     {
-//       type: "input",
-//       name: "managerName",
-//       message: "Please enter Manager name:",
-//       // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
-//     },
-//     {
-//       type: "input",
-//       name: "managerID",
-//       message: "Please enter Manager ID number:",
-//     },
-//     {
-//       type: "input",
-//       name: "managerEmail",
-//       message: "Please enter Manager e-mail address:",
-//     },
-//   ]);
-// }
-
 function createRestOfTeam() {
   inquirer
     .prompt([
@@ -98,13 +90,13 @@ function createRestOfTeam() {
         //TODO: can i combine these? remove I'm done and treat any other input as default? I think so
         //TODO: add a final prompt for team name maybe
         default:
+          //   console.log(employees);
           writeHTMLDoc(render(employees));
       }
     });
 }
 
-//FIXME: these variables were for a cockamamie idea for DRY
-function createEngineer(name, id, email) {
+function createEngineer() {
   inquirer
     .prompt([
       {
@@ -135,8 +127,6 @@ function createEngineer(name, id, email) {
       createRestOfTeam();
     });
 }
-
-// createEngineer();
 
 function createIntern() {
   inquirer
@@ -199,30 +189,6 @@ function writeHTMLDoc(renderData, teamName) {
     console.log("Your team template HTML page has been successfully generated!");
   });
 }
-
-// const questions = [
-//     {
-//       type: "input",
-//       name: "managerName",
-//       message: "Please enter Manager name:",
-//       // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
-//     },
-//     {
-//       type: "input",
-//       name: "managerID",
-//       message: "Please enter Manager ID number:",
-//     },
-//     {
-//       type: "input",
-//       name: "managerEmail",
-//       message: "Please enter Manager e-mail address:",
-//     },
-//     {
-//       type: "input",
-//       name: "managerOfficeNumber",
-//       message: "Please enter Manager office number:",
-//     },
-//   ];
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
