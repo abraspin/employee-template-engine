@@ -20,23 +20,45 @@ const createNewManager = () => {
         type: "input",
         name: "managerName",
         message: "Please enter Manager name:",
-        // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
+        validate: (managerName) => {
+          if (managerName) {
+            return true;
+          }
+          return "You must enter a manager name!";
+        },
       },
       {
         type: "input",
         name: "managerID",
         message: "Please enter Manager ID number:",
+        validate: (managerID) => {
+          if (managerID) {
+            return true;
+          }
+          return "You must enter a manager ID!";
+        },
       },
       {
         type: "input",
         name: "managerEmail",
         message: "Please enter Manager e-mail address:",
-        // @.com
+        validate: (managerEmail) => {
+          if (managerEmail) {
+            return true;
+          }
+          return "You must enter a manager E-mail!";
+        },
       },
       {
         type: "input",
         name: "managerOfficeNumber",
         message: "Please enter Manager office number:",
+        validate: (managerOfficeNumber) => {
+          if (managerOfficeNumber) {
+            return true;
+          }
+          return "You must enter a manager office number!";
+        },
       },
     ])
     .then(function (data) {
