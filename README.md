@@ -21,9 +21,9 @@ A TDD (Test Driven Development) command line application that creates an HTML di
 ---
 
 ## User Story
->AS a manager
->I want to generate a webpage that displays my team's basic info
->SO that I have quick access to emails and GitHub profiles
+>AS a manager  
+>I want to generate a webpage that displays my team's basic info  
+>SO that I have quick access to emails and GitHub profiles  
 
 ---
 
