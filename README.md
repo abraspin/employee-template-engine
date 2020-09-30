@@ -1,4 +1,4 @@
-# employee-template-engine
+# Template Engine - Employee Summary
  ![MIT_License License](https://img.shields.io/badge/License-MIT_License-brightgreen)
   ![Repo-Code_Composition](https://img.shields.io/github/languages/top/abraspin/employee-template-engine)  
 A TDD (Test Driven Development) command line application that creates an HTML display of the team roster visual format based on user input.
