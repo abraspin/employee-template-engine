@@ -158,22 +158,45 @@ function createIntern() {
         type: "input",
         name: "internName",
         message: "Please enter Intern name:",
-        // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
+        validate: (internName) => {
+          if (internName) {
+            return true;
+          }
+          return "You must enter an intern nameinternName!";
+        },
       },
       {
         type: "input",
         name: "internID",
         message: "Please enter Intern ID number:",
+        validate: (internID) => {
+          if (internID) {
+            return true;
+          }
+          return "You must enter an intern ID!";
+        },
       },
       {
         type: "input",
         name: "internEmail",
         message: "Please enter Intern e-mail address:",
+        validate: (internEmail) => {
+          if (internEmail) {
+            return true;
+          }
+          return "You must enter an intern E-mail!";
+        },
       },
       {
         type: "input",
         name: "internSchool",
         message: "Please enter Intern school:",
+        validate: (internSchool) => {
+          if (internSchool) {
+            return true;
+          }
+          return "You must enter an intern school!";
+        },
       },
     ])
     .then(function (data) {
