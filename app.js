@@ -78,7 +78,6 @@ function createRestOfTeam() {
         type: "list",
         name: "newMemberRole",
         message: "Please choose another team member to add:",
-        // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
         choices: ["Engineer", "Intern", "I'm done!"],
       },
     ])
@@ -103,22 +102,46 @@ function createEngineer() {
         type: "input",
         name: "engineerName",
         message: "Please enter Engineer name:",
-        // validate: (managerName) => {if (managerName) {return true;}return "You must enter a managerName!";},
+
+        validate: (engineerName) => {
+          if (engineerName) {
+            return true;
+          }
+          return "You must enter an engineer name!";
+        },
       },
       {
         type: "input",
         name: "engineerID",
         message: "Please enter Engineer ID number:",
+        validate: (engineerID) => {
+          if (engineerID) {
+            return true;
+          }
+          return "You must enter an engineer ID!";
+        },
       },
       {
         type: "input",
         name: "engineerEmail",
         message: "Please enter Engineer e-mail address:",
+        validate: (engineerEmail) => {
+          if (engineerEmail) {
+            return true;
+          }
+          return "You must enter an engineer E-mail!";
+        },
       },
       {
         type: "input",
         name: "engineerGitHub",
         message: "Please enter Engineer GitHub username:",
+        validate: (engineerGitHub) => {
+          if (engineerGitHub) {
+            return true;
+          }
+          return "You must enter an engineer GitHub!";
+        },
       },
     ])
     .then(function (data) {
