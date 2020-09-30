@@ -13,7 +13,7 @@ A TDD (Test Driven Development) command line application that creates an HTML di
 * [User Story](#User-Story)
 * [Usage](#Usage)
 * [App in Action](#App-in-Action)
-* [Example README](#Example-README)
+* [Example](#Example)
 * [Contents](#Contents)
 * [Author](#Author)
 * [License](#License)
@@ -38,7 +38,7 @@ This is a "Command Line Interace" application running in a Node.js runtime envir
 ![example-video](./images/team-template-app-demo.gif)
 
 
-## Example README
+## Example
 ![Screenshot of deployed app](./images/app-screenshot.png)
 
 
