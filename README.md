@@ -66,7 +66,7 @@ Abraham Spindel
 ## License
 * [Node.js Project Licensing](https://raw.githubusercontent.com/nodejs/node/master/LICENSE)   
 * Node Package Manager (npm) [Artistic License 2.0](https://www.npmjs.com/policies/npm-license)  
-* npm Inquirer: Copyright (c) 2016 Simon Boudrias (twitter: @vaxilart) Licensed under the [MIT license](https://choosealicense.com/licenses/mi t/)    
+* npm Inquirer: Copyright (c) 2016 Simon Boudrias (twitter: @vaxilart) Licensed under the [MIT license](https://choosealicense.com/licenses/mit/)    
 * Font Awesome by Dave Gandy - http://fontawesome.io    
 
 
