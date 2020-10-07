@@ -49,7 +49,7 @@ This is a "Command Line Interace" application running in a Node.js runtime envir
 * App JS page
 * Sample Screenshot of App 
 * App Demo GIF
-* Classes Liibary
+* Classes Libary
 * HTML Templates Library 
 * Test Library
 * Sample HTML Output File
